@@ -16,6 +16,13 @@ router.get('*', function(request, response, next){
 
 });
 
+router.get('/adminpanel', function(request, response){
+			response.redirect('/user/adminpanel');
+
+	});
+
+
+
 router.get('/userprofile', function(request, response){
 
 		var username=request.cookies['username'];
@@ -35,7 +42,7 @@ router.get('/userprofile', function(request, response){
 	});
 
 
-	 
+
 
 router.get('/edit', function(request, response){
 	var username=request.cookies['username'];
@@ -46,12 +53,31 @@ router.get('/edit', function(request, response){
 	
 });
 
+router.post('/edit', function(request, response){
 
+	var user = {
+		username: request.body.username,
+		password: request.body.password,
+		id: request.params.id
+	};
 
-
+	userModel.update(user, function(status){
 		
+		if(status){
+			response.redirect('/user/userlist');
+		}else{
+			response.redirect('/user/edit/'+request.params.id);
+		}
+	});
+	
+});
+
+
+
+	
 		
 });
+
 
 
 
