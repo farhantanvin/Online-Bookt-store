@@ -49,8 +49,8 @@ module.exports = {
 	},
 	insert: function(user, callback){
 
-		var sql ="insert into user values('', ?, ?)";
-		db.execute(sql, [user.username, user.password], function(status){
+		var sql ="insert into user values('', ?, ?,?,?,?,?)";
+		db.execute(sql, [user.fullname,user.username, user.password,user.mobile,user.gender,user.usertype], function(status){
 			callback(status);
 		});
 	},
