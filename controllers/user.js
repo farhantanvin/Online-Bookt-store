@@ -17,7 +17,14 @@ router.get('*', function(request, response, next){
 });
 
 router.get('/userprofile', function(request, response){
-	response.render("user/userprofile");
+
+		var username=var cookies = cookie.parse('username');
+
+	userModel.username(username, function(result){
+		response.render('user/userprofile', result);
+	});
+		
+		
 });
 
 
