@@ -16,6 +16,7 @@ router.post('/', function(request, response){
 	userModel.validate(user, function(status){
 		if(status){
 			response.cookie('username', request.body.username);
+			
 			response.redirect('/user/userprofile');
 		}else{
 			response.send('invalid username/password');		

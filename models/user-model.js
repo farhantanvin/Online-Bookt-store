@@ -20,7 +20,7 @@ module.exports = {
 			if(result.length > 0){
 				callback(result);
 			}else{
-				callback(false);
+				callback(result);
 			}
 		});	
 	},
