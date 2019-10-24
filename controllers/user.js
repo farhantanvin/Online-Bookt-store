@@ -23,12 +23,24 @@ router.get('/userprofile', function(request, response){
 
 	    userModel.getByusername(username, function(result){
 	    
-		response.render('user/userprofile', result);
+	    if(result.usertype=="user"){response.render('user/userprofile', result);}
+	    else
+	    {
+	    	response.render('user/adminprofile', result);
+	    }
+
+		
+
+
 	});
+
+
+	 
 
 router.get('/edit', function(request, response){
 	var username=request.cookies['username'];
 	userModel.getByusername(username, function(result){
+
 		response.render('user/edit', result);
 	});
 	
