@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get('/', function(request, response){
 
-	//response.clearCookie('username');
+	response.clearCookie('username');
 	response.redirect('/login');
 });
 

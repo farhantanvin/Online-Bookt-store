@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home page</title>
+</head>
+<body>
+	<h1>Add Book</h1>
+	<a href="/index">Back</a> | 
+	<a href="/logout">logout</a>
+	
+	<form method="post">
+	<table border="0">
+		<tr>
+			<td>NAME</td>
+			<td><input type="text" name="bookname"></td>
+		</tr>
+		<tr>
+			<td>Author</td>
+			<td><input type="text" name="author"></td>
+		</tr>
+		<tr>
+				<td>Price</td>
+				<td><input type="text" name="price"></td>
+			</tr>
+		<tr>
+		<tr>
+				<td>Category:</td>
+				<td><input type="radio" name="bcat" value="Novel"> Novel<br>
+					<input type="radio" name="bcat" value="Literature"> Literature<br>
+					<input type="radio" name="bcat" value="Sci-Fi"> Sci-Fi</td>
+		</tr>
+		<tr>
+				<td>Description</td>
+				<td><input type="text" name="desc"></td>
+			</tr>
+		<tr>
+
+			<td><input type="submit" name="submit" value="Save"></td>
+			<td></td>
+		</tr>
+	</table>
+</form>
+
+</body>
+</html>

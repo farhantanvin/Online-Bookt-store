@@ -19,12 +19,24 @@ router.get('*', function(request, response, next){
 router.get('/userprofile', function(request, response){
 
 		var username=request.cookies['username'];
-		//console.log(username);
+		 
 
 	    userModel.getByusername(username, function(result){
-	    //console.log(result);
+	    
 		response.render('user/userprofile', result);
 	});
+
+router.get('/edit', function(request, response){
+	var username=request.cookies['username'];
+	userModel.getByusername(username, function(result){
+		response.render('user/edit', result);
+	});
+	
+});
+
+
+
+
 		
 		
 });
