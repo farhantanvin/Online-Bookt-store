@@ -13,14 +13,25 @@ module.exports = {
 				}
 			});
 	},
+	getByusername:function(username, callback){
+
+			var sql = "select * from user where username=?";
+			db.getResults(sql, [username], function(result){
+				if(result.length > 0 ){
+					callback(result[0]);
+				}else{
+					callback([]);
+				}
+			});
+	},
 	validate: function(user, callback){
 		var sql ="select * from user where username=? and password=?";
 		db.getResults(sql, [user.username, user.password], function(result){
 
 			if(result.length > 0){
-				callback(result);
+				callback(true);
 			}else{
-				callback(result);
+				callback(false);
 			}
 		});	
 	},
